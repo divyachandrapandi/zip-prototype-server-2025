@@ -1,50 +1,41 @@
-import fs from "fs";
-import path from "path";
-import handlebars from "handlebars";
-import puppeteer from "puppeteer-core";
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotEnv from 'dotenv';
+import { router } from "./routes/v1/index.js";
 
 const app = express();
+
+dotEnv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post("/generate-pdf", async (req, res) => {
-   try {
-       const { customerName, subscriptionId, invoiceDate, amount, dueDate } = req.body;
+app.use('/v1', router);
 
-       const templatePath = path.join(process.cwd(), "templates", "template.html");
-       const templateHtml = fs.readFileSync(templatePath, "utf-8");
-       console.log("template Path - ", req.body);
-
-       const template = handlebars.compile(templateHtml);
-
-       const html = template({ customerName, subscriptionId, invoiceDate, amount, dueDate });
-       // console.log("template  - ", html);
-
-       const browser = await puppeteer.launch({
-           executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Mac path
-           headless: true
-       });
-
-       const page = await browser.newPage();
-       await page.setContent(html, { waitUntil: "networkidle0" });
-       const pdfBuffer = await page.pdf({
-           format: "A4",
-           printBackground: true, // ✅ includes CSS background colors
-           margin: { top: "20mm", right: "15mm", bottom: "20mm", left: "15mm" },
-       });
-
-       await browser.close();
-
-       res.setHeader("Content-Type", "application/pdf");
-       res.setHeader("Content-Disposition", "attachment; filename=output.pdf");
-       res.status(201).send(pdfBuffer);
-   } catch (error) {
-       console.error("Error generating PDF:", error);
-       res.status(500).send("PDF generation failed");
-   }
+const server = app.listen(process.env.PORT, async () => {
+    console.log("App listening in", process.env.PORT);
 });
 
-app.listen(5000, () => console.log("⚡ Server running at http://localhost:5000"));
+const exitHandler = () => {
+    if (server) {
+        server.close(() => {
+            process.exit(1);
+        });
+    } else {
+        process.exit(1);
+    }
+};
+
+const unexpectedErrorHandler = (error) => {
+    exitHandler();
+};
+
+process.on('uncaughtException', unexpectedErrorHandler);
+process.on('unhandledRejection', unexpectedErrorHandler);
+process.title = 'zip-server';
+
+process.on('SIGTERM', () => {
+    if (server) {
+        server.close();
+    }
+});
