@@ -25,6 +25,7 @@ const exitHandler = () => {
         process.exit(1);
     }
 };
+// Feature branch test
 
 const unexpectedErrorHandler = (error) => {
     exitHandler();
