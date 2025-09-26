@@ -1,0 +1,72 @@
+[
+  {
+    "id": "noti-101",
+    "toRole": "ADMIN",
+    "projectId": "proj-102",
+    "notification_type": "REQ_SUBMITTED",
+    "message": "Verdigm submitted 2 new requirements.",
+    "createdAt": "2025-09-21T10:45:00Z",
+    "read": true,
+    "meta": {
+      "reqId": "req-201"
+    }
+  },
+  {
+    "id": "noti-102",
+    "toRole": "ADMIN",
+    "projectId": "proj-103",
+    "notification_type": "RTM_GENERATED",
+    "message": "System generated RTM for Acme Integration.",
+    "createdAt": "2025-09-22T16:30:00Z",
+    "read": true,
+    "meta": {
+      "rtmId": "rtm-103"
+    }
+  },
+  {
+    "id": "noti-103",
+    "toRole": "ADMIN",
+    "projectId": "proj-104",
+    "notification_type": "RTM_APPROVED",
+    "message": "RTM for RetailMax has been approved.",
+    "createdAt": "2025-09-23T09:15:00Z",
+    "read": true,
+    "meta": {
+      "rtmId": "rtm-104"
+    }
+  },
+  {
+    "id": "noti-201",
+    "toRole": "USER",
+    "projectId": "proj-101",
+    "notification_type": "SYSTEM_UPDATE",
+    "message": "Admin requested system update for your Billing Implementation.",
+    "createdAt": "2025-09-26T10:15:00Z",
+    "read": true,
+    "meta": null
+  },
+  {
+    "id": "noti-202",
+    "toRole": "USER",
+    "projectId": "proj-102",
+    "notification_type": "RTM_REVIEWED",
+    "message": "RTM for Verdigm is under review.",
+    "createdAt": "2025-09-24T14:30:00Z",
+    "read": true,
+    "meta": {
+      "rtmId": "rtm-102"
+    }
+  },
+  {
+    "id": "noti-203",
+    "toRole": "USER",
+    "projectId": "proj-104",
+    "notification_type": "RTM_APPROVED",
+    "message": "RTM for RetailMax Deployment has been approved.",
+    "createdAt": "2025-09-25T11:45:00Z",
+    "read": true,
+    "meta": {
+      "rtmId": "rtm-104"
+    }
+  }
+]

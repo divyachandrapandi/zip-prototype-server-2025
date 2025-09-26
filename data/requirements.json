@@ -1,0 +1,104 @@
+[
+  {
+    "projectId": "proj-102",
+    "client": "Verdigm",
+    "requirements": [
+      {
+        "id": "req-201",
+        "projectId": "proj-102",
+        "client": "Verdigm",
+        "title": "Revenue Recognition Rules",
+        "description": "System must support ASC 606 and IFRS 15 compliance for revenue recognition.",
+        "status": "Processed",
+        "priority": "High",
+        "submittedBy": "USER",
+        "fileName": "Verdigm_requirements.xlsx",
+        "filePath": "/files/requirements/Verdigm_requirements.xlsx",
+        "createdAt": "2025-09-21T10:00:00Z",
+        "updatedAt": "2025-09-22T12:00:00Z"
+      },
+      {
+        "id": "req-202",
+        "projectId": "proj-102",
+        "client": "Verdigm",
+        "title": "Invoice Consolidation",
+        "description": "System should consolidate multiple subscriptions into a single invoice.",
+        "status": "In Review",
+        "priority": "Medium",
+        "submittedBy": "USER",
+        "fileName": "Verdigm_requirements.xlsx",
+        "filePath": "/files/requirements/Verdigm_requirements.xlsx",
+        "createdAt": "2025-09-21T11:00:00Z",
+        "updatedAt": "2025-09-22T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "projectId": "proj-103",
+    "client": "Acme Corp",
+    "requirements": [
+      {
+        "id": "req-301",
+        "projectId": "proj-103",
+        "client": "Acme Corp",
+        "title": "User Role Permissions",
+        "description": "System must enforce role-based access for Finance and Admin users.",
+        "status": "Submitted",
+        "priority": "High",
+        "submittedBy": "ADMIN",
+        "fileName": "Acme_requirements.docx",
+        "filePath": "/files/requirements/Acme_requirements.docx",
+        "createdAt": "2025-09-22T09:00:00Z",
+        "updatedAt": "2025-09-22T09:30:00Z"
+      },
+      {
+        "id": "req-302",
+        "projectId": "proj-103",
+        "client": "Acme Corp",
+        "title": "Audit Trail",
+        "description": "System should log all changes to subscription records.",
+        "status": "Processed",
+        "priority": "Low",
+        "submittedBy": "USER",
+        "fileName": "Acme_requirements.docx",
+        "filePath": "/files/requirements/Acme_requirements.docx",
+        "createdAt": "2025-09-22T09:45:00Z",
+        "updatedAt": "2025-09-22T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "projectId": "proj-104",
+    "client": "RetailMax",
+    "requirements": [
+      {
+        "id": "req-401",
+        "projectId": "proj-104",
+        "client": "RetailMax",
+        "title": "Multi-Currency Support",
+        "description": "System must support USD, EUR, and GBP for billing.",
+        "status": "Processed",
+        "priority": "High",
+        "submittedBy": "USER",
+        "fileName": "RetailMax_requirements.csv",
+        "filePath": "/files/requirements/RetailMax_requirements.csv",
+        "createdAt": "2025-09-23T08:00:00Z",
+        "updatedAt": "2025-09-23T08:30:00Z"
+      },
+      {
+        "id": "req-402",
+        "projectId": "proj-104",
+        "client": "RetailMax",
+        "title": "Payment Gateway Integration",
+        "description": "Integration with Stripe and PayPal for subscription billing.",
+        "status": "Processed",
+        "priority": "Medium",
+        "submittedBy": "USER",
+        "fileName": "RetailMax_requirements.csv",
+        "filePath": "/files/requirements/RetailMax_requirements.csv",
+        "createdAt": "2025-09-23T08:45:00Z",
+        "updatedAt": "2025-09-23T09:00:00Z"
+      }
+    ]
+  }
+]
