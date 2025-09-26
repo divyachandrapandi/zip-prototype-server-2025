@@ -10,7 +10,7 @@ dotEnv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/v1', router);
+app.use('/api/v1', router);
 
 const server = app.listen(process.env.PORT, async () => {
     console.log("App listening in", process.env.PORT);
