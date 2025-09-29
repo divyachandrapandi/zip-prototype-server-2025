@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "kill-port": "lsof -ti:5000 | xargs kill -9 || echo 'Port 5000 not in use'"
   },
   "author": "",
   "license": "ISC",
@@ -13,11 +14,17 @@
     "body-parser": "^2.2.0",
     "celebrate": "^15.0.3",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^17.2.2",
+    "exceljs": "^4.4.0",
     "express": "^5.1.0",
     "handlebars": "^4.7.8",
     "joi": "^18.0.1",
+    "https": "^1.0.0",
+    "mammoth": "^1.11.0",
+    "multer": "^2.0.2",
     "nodemon": "^3.1.10",
+    "openai": "^5.23.0",
     "pdf-lib": "^1.17.1",
     "puppeteer-core": "^24.22.0"
   }

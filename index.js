@@ -26,7 +26,6 @@ const exitHandler = () => {
         process.exit(1);
     }
 };
-// Feature branch test
 
 const unexpectedErrorHandler = (error) => {
     exitHandler();
@@ -41,3 +40,10 @@ process.on('SIGTERM', () => {
         server.close();
     }
 });
+
+// server.on('error', (err) => {
+//     console.error('❌ Server error:', err.message);
+//     if (err.code === 'EADDRINUSE') {
+//         console.error(`Port ${ process.env.PORT} is already in use. Try a different port.`);
+//     }
+// });
