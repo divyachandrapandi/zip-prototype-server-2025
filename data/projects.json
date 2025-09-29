@@ -4,13 +4,13 @@
     "name": "Indeed Billing Implementation",
     "client": "Indeed",
     "phase": "Requirements Gathering",
-    "phase_type": "ENV_READY",
+    "phase_type": "REQ_REQUESTED",
     "status": "Planning",
     "assignee": "Sarah Johnson",
     "dueDate": "2026-01-15T00:00:00Z",
     "progress": 25,
     "createdAt": "2025-09-20T09:00:00Z",
-    "updatedAt": "2025-09-26T11:00:00Z",
+    "updatedAt": "2025-09-29T06:39:32.943Z",
     "timeline": [
       "evt-1",
       "evt-1a",
@@ -33,9 +33,9 @@
     "createdAt": "2025-09-21T09:00:00Z",
     "updatedAt": "2025-09-26T12:00:00Z",
     "timeline": [
-      "evt-10",  // CONTRACT_SIGNED
-      "evt-11",  // PROJECT_PLANNED
-      "evt-12",  // REQ_SUBMITTED
+      "evt-10",
+      "evt-11",
+      "evt-12",
       "evt-13",
       "evt-14",
       "evt-15"
@@ -46,7 +46,7 @@
     "name": "Acme Integration",
     "client": "Acme Corp",
     "phase": "User Acceptance Testing",
-    "phase_type": "UAT",                        // could extend EVENT_TYPES if needed
+    "phase_type": "UAT",
     "status": "Testing",
     "assignee": "Alex Rodriguez",
     "dueDate": "2023-12-20T00:00:00Z",
@@ -54,10 +54,10 @@
     "createdAt": "2025-09-22T09:00:00Z",
     "updatedAt": "2025-09-26T12:30:00Z",
     "timeline": [
-      "evt-20",  // CONTRACT_SIGNED
-      "evt-21",  // PROJECT_PLANNED
-      "evt-22",  // RTM_APPROVED
-      "evt-23"   // SYSTEM_UPDATE
+      "evt-20",
+      "evt-21",
+      "evt-22",
+      "evt-23"
     ]
   },
   {
@@ -65,7 +65,7 @@
     "name": "RetailMax Deployment",
     "client": "RetailMax",
     "phase": "Go-Live",
-    "phase_type": "GO_LIVE",                    // could extend EVENT_TYPES if needed
+    "phase_type": "GO_LIVE",
     "status": "Completed",
     "assignee": "Priya Patel",
     "dueDate": "2023-11-30T00:00:00Z",
@@ -73,11 +73,11 @@
     "createdAt": "2025-09-23T09:00:00Z",
     "updatedAt": "2025-09-26T13:00:00Z",
     "timeline": [
-      "evt-30",  // CONTRACT_SIGNED
-      "evt-31",  // PROJECT_PLANNED
-      "evt-32",  // KICKOFF_MEETING
-      "evt-33",  // GO_LIVE (extended event type)
-      "evt-34"   // SYSTEM_UPDATE
+      "evt-30",
+      "evt-31",
+      "evt-32",
+      "evt-33",
+      "evt-34"
     ]
   }
 ]

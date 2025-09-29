@@ -4,8 +4,8 @@
     "projectId": "proj-102",
     "client": "Verdigm",
     "name": "Verdigm_RTM_Sep2025.xlsx",
-    "status": "Generated",                        // Draft | Generated | Shared | Approved
-    "requirements": ["req-201", "req-202"],      // links to requirements.json
+    "status": "Generated",                        
+    "requirements": ["req-201", "req-202"],     
     "generatedBy": "SYSTEM",
     "generatedDate": "2025-09-23T14:00:00Z",
     "filePath": "/files/rtm/Verdigm_RTM_Sep2025.xlsx",
@@ -16,7 +16,7 @@
     "projectId": "proj-103",
     "client": "Acme Corp",
     "name": "Acme_RTM_Sep2025.xlsx",
-    "status": "Reviewed",                        // Draft | Generated | Shared | Reviewed | Approved
+    "status": "Reviewed",                        
     "requirements": ["req-301", "req-302"],
     "generatedBy": "ADMIN",
     "generatedDate": "2025-09-22T16:15:00Z",

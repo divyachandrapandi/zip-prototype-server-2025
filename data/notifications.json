@@ -68,5 +68,31 @@
     "meta": {
       "rtmId": "rtm-104"
     }
+  },
+  {
+    "id": "notif-1759127412107",
+    "toRole": "ADMIN",
+    "projectId": "proj-102",
+    "notification_type": "REQ_SUBMITTED",
+    "message": "Requirement \"Revenue Recognition Rules2\" has been updated by ADMIN",
+    "createdAt": "2025-09-29T06:30:12.107Z",
+    "read": false,
+    "meta": {
+      "requirementId": "req-201",
+      "client": "Verdigm"
+    }
+  },
+  {
+    "id": "noti-1759127972943-ml3p55oqe",
+    "toRole": "USER",
+    "projectId": "proj-101",
+    "notification_type": "REQ_REQUESTED",
+    "message": "Your requirements request has been submitted successfully.",
+    "createdAt": "2025-09-29T06:39:32.943Z",
+    "read": false,
+    "meta": {
+      "projectId": "proj-101",
+      "phase": "REQ_REQUESTED"
+    }
   }
 ]

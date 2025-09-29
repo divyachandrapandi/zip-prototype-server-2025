@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import handlebars from 'handlebars';
 import puppeteer from 'puppeteer-core';
+import { getData } from '../helpers/dataHelper.js';
 import { OpenAI } from 'openai';
 
 import dotenv from 'dotenv';
@@ -53,6 +54,18 @@ const fetchRTMFile = async (req, res, next) => {
     fs.createReadStream(filePath).pipe(res);
 
 };
+
+// GET /api/v1/rtms
+
+export const getRtms = (req, res) => {
+    try {
+        const rtms = getData('rtms');
+        res.json(rtms);
+    } catch(e) {
+        console.log('error', e);
+        res.status(500).json({message: 'Error while fetching rtms'});
+    }
+}
 
 // Initialize OpenAI API client with your API key (set in environment variable)
 const openai = new OpenAI({
@@ -510,5 +523,6 @@ export const rtmController = {
     generatePDF,
     generateRTM,
     fetchRTMFile,
-    healthCheck
+    healthCheck,
+    getRtms
 };
