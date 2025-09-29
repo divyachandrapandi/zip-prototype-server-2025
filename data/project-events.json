@@ -107,7 +107,6 @@
     "messageAdmin": "RTM reviewed by Admin for Verdigm.",
     "messageUser": "Your RTM draft is under review by Admin."
   },
-
   {
     "id": "evt-20",
     "projectId": "proj-103",
@@ -144,7 +143,6 @@
     "messageAdmin": "System updated project metrics for Acme.",
     "messageUser": "Your project metrics have been updated."
   },
-
   {
     "id": "evt-30",
     "projectId": "proj-104",
@@ -189,5 +187,14 @@
     "actor": "SYSTEM",
     "messageAdmin": "System finalized reporting for RetailMax project.",
     "messageUser": "Your project reporting has been finalized."
+  },
+  {
+    "id": "evt-1759127972943-o71lyalh2",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-29T06:39:32.943Z",
+    "projectevent_type": "REQ_REQUESTED",
+    "actor": "USER",
+    "messageAdmin": "Indeed Billing Implementation - User requested new requirements.",
+    "messageUser": "You have requested new requirements for your project."
   }
 ]

@@ -7,7 +7,7 @@
         "id": "req-201",
         "projectId": "proj-102",
         "client": "Verdigm",
-        "title": "Revenue Recognition Rules",
+        "title": "Revenue Recognition Rules2",
         "description": "System must support ASC 606 and IFRS 15 compliance for revenue recognition.",
         "status": "Processed",
         "priority": "High",
@@ -15,7 +15,7 @@
         "fileName": "Verdigm_requirements.xlsx",
         "filePath": "/files/requirements/Verdigm_requirements.xlsx",
         "createdAt": "2025-09-21T10:00:00Z",
-        "updatedAt": "2025-09-22T12:00:00Z"
+        "updatedAt": "2025-09-29T06:30:12.105Z"
       },
       {
         "id": "req-202",

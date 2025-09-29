@@ -2,8 +2,9 @@ import path from 'path';
 import fs from 'fs';
 import handlebars from 'handlebars';
 import puppeteer from 'puppeteer-core';
+import { getData } from '../helpers/dataHelper.js';
 
-const generatePDF = async (req, res, next ) => {
+export const generatePDF = async (req, res, next ) => {
     try {
         const { customerName, subscriptionId, invoiceDate, amount, dueDate } = req.body;
 
@@ -40,6 +41,14 @@ const generatePDF = async (req, res, next ) => {
     }
 }
 
-export const rtmController = {
-    generatePDF
+// GET /api/v1/rtms
+
+export const getRtms = (req, res) => {
+    try {
+        const rtms = getData('rtms');
+        res.json(rtms);
+    } catch(e) {
+        console.log('error', e);
+        res.status(500).json({message: 'Error while fetching rtms'});
+    }
 }

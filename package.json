@@ -11,10 +11,12 @@
   "description": "",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "celebrate": "^15.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "handlebars": "^4.7.8",
+    "joi": "^18.0.1",
     "nodemon": "^3.1.10",
     "pdf-lib": "^1.17.1",
     "puppeteer-core": "^24.22.0"
