@@ -14,6 +14,7 @@ const generateId = (prefix) => {
 export const getProjects = (req, res) => {
   try {
     const projects = dataHelper.getData(PROJECTS_FILE);
+      console.log("triggered");
     res.json(projects);
   } catch (error) {
     console.error('Error fetching projects:', error);

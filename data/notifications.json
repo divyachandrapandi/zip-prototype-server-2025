@@ -76,7 +76,7 @@
     "notification_type": "REQ_SUBMITTED",
     "message": "Requirement \"Revenue Recognition Rules2\" has been updated by ADMIN",
     "createdAt": "2025-09-29T06:30:12.107Z",
-    "read": false,
+    "read": true,
     "meta": {
       "requirementId": "req-201",
       "client": "Verdigm"
