@@ -22,4 +22,11 @@ router.put(
   projectController.updateProject
 );
 
+// POST /api/v1/projects/update-event - Update project phase and create event + notification
+router.post(
+    '/update-event',
+    // celebrate(projectValidation.updateProjectPhase),
+    projectController.updateProjectPhase
+);
+
 export default router;

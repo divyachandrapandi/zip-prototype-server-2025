@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rtm-102",
+    "projectId": "proj-102",
+    "client": "Verdigm",
+    "name": "Verdigm_RTM_Sep2025.xlsx",
+    "status": "Generated",                        
+    "requirements": ["req-201", "req-202"],     
+    "generatedBy": "SYSTEM",
+    "generatedDate": "2025-09-23T14:00:00Z",
+    "filePath": "/files/rtm/Verdigm_RTM_Sep2025.xlsx",
+    "version": 1
+  },
+  {
+    "id": "rtm-103",
+    "projectId": "proj-103",
+    "client": "Acme Corp",
+    "name": "Acme_RTM_Sep2025.xlsx",
+    "status": "Reviewed",                        
+    "requirements": ["req-301", "req-302"],
+    "generatedBy": "ADMIN",
+    "generatedDate": "2025-09-22T16:15:00Z",
+    "filePath": "/files/rtm/Acme_RTM_Sep2025.xlsx",
+    "version": 2
+  },
+  {
+    "id": "rtm-104",
+    "projectId": "proj-104",
+    "client": "RetailMax",
+    "name": "RetailMax_RTM_Sep2025.xlsx",
+    "status": "Approved",
+    "requirements": ["req-401", "req-402"],
+    "generatedBy": "SYSTEM",
+    "generatedDate": "2025-09-20T09:00:00Z",
+    "filePath": "/files/rtm/RetailMax_RTM_Sep2025.xlsx",
+    "version": 3
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "id": "evt-1",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:00:00Z",
+    "projectevent_type": "PROJECT_INITIATED",
+    "actor": "ADMIN",
+    "messageAdmin": "Project initiated for client Indeed.",
+    "messageUser": "Your project setup has been initiated by Zuora."
+  },
+  {
+    "id": "evt-1a",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:05:00Z",
+    "projectevent_type": "CONTRACT_SIGNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Contract signed and confirmed for Indeed implementation.",
+    "messageUser": "Your contract for Zuora implementation has been signed."
+  },
+  {
+    "id": "evt-1b",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:10:00Z",
+    "projectevent_type": "PROJECT_PLANNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Project planning completed with milestones defined.",
+    "messageUser": "Your implementation project plan has been created."
+  },
+  {
+    "id": "evt-1c",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:15:00Z",
+    "projectevent_type": "KICKOFF_MEETING",
+    "actor": "ADMIN",
+    "messageAdmin": "Kickoff meeting held with Indeed stakeholders.",
+    "messageUser": "Your kickoff meeting was held with Zuora consultants."
+  },
+  {
+    "id": "evt-1d",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:20:00Z",
+    "projectevent_type": "ACCESS_GRANTED",
+    "actor": "USER",
+    "messageAdmin": "Indeed provided sandbox access to their test environment.",
+    "messageUser": "You granted sandbox access to Zuora consultants."
+  },
+  {
+    "id": "evt-1e",
+    "projectId": "proj-101",
+    "timestamp": "2025-09-26T09:30:00Z",
+    "projectevent_type": "INITIAL_CONFIG",
+    "actor": "SYSTEM",
+    "messageAdmin": "System completed initial configuration setup.",
+    "messageUser": "Initial configuration has been completed for your project."
+  },
+  {
+    "id": "evt-10",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-21T09:00:00Z",
+    "projectevent_type": "CONTRACT_SIGNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Contract signed for Verdigm revenue migration.",
+    "messageUser": "Your contract for Zuora implementation has been signed."
+  },
+  {
+    "id": "evt-11",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-21T09:15:00Z",
+    "projectevent_type": "PROJECT_PLANNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Project planning completed for Verdigm.",
+    "messageUser": "Your implementation project plan has been created."
+  },
+  {
+    "id": "evt-12",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-21T10:00:00Z",
+    "projectevent_type": "REQ_SUBMITTED",
+    "actor": "USER",
+    "messageAdmin": "Verdigm submitted 2 new requirements.",
+    "messageUser": "You submitted 2 new requirements."
+  },
+  {
+    "id": "evt-13",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-21T12:00:00Z",
+    "projectevent_type": "REQ_PROCESSED",
+    "actor": "SYSTEM",
+    "messageAdmin": "System processed Verdigm requirements.",
+    "messageUser": "Your requirements have been processed by the system."
+  },
+  {
+    "id": "evt-14",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-22T14:00:00Z",
+    "projectevent_type": "RTM_GENERATED",
+    "actor": "SYSTEM",
+    "messageAdmin": "System generated RTM draft for Verdigm.",
+    "messageUser": "Your RTM draft has been generated."
+  },
+  {
+    "id": "evt-15",
+    "projectId": "proj-102",
+    "timestamp": "2025-09-23T14:00:00Z",
+    "projectevent_type": "RTM_REVIEWED",
+    "actor": "ADMIN",
+    "messageAdmin": "RTM reviewed by Admin for Verdigm.",
+    "messageUser": "Your RTM draft is under review by Admin."
+  },
+  {
+    "id": "evt-20",
+    "projectId": "proj-103",
+    "timestamp": "2025-09-22T09:00:00Z",
+    "projectevent_type": "CONTRACT_SIGNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Contract signed for Acme Integration.",
+    "messageUser": "Your contract has been signed."
+  },
+  {
+    "id": "evt-21",
+    "projectId": "proj-103",
+    "timestamp": "2025-09-22T09:30:00Z",
+    "projectevent_type": "PROJECT_PLANNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Project planning completed for Acme.",
+    "messageUser": "Your implementation project plan has been created."
+  },
+  {
+    "id": "evt-22",
+    "projectId": "proj-103",
+    "timestamp": "2025-09-22T10:00:00Z",
+    "projectevent_type": "RTM_APPROVED",
+    "actor": "ADMIN",
+    "messageAdmin": "RTM approved for Acme Integration.",
+    "messageUser": "Your RTM has been approved."
+  },
+  {
+    "id": "evt-23",
+    "projectId": "proj-103",
+    "timestamp": "2025-09-22T12:30:00Z",
+    "projectevent_type": "SYSTEM_UPDATE",
+    "actor": "SYSTEM",
+    "messageAdmin": "System updated project metrics for Acme.",
+    "messageUser": "Your project metrics have been updated."
+  },
+  {
+    "id": "evt-30",
+    "projectId": "proj-104",
+    "timestamp": "2025-09-23T09:00:00Z",
+    "projectevent_type": "CONTRACT_SIGNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Contract signed for RetailMax Deployment.",
+    "messageUser": "Your contract has been signed."
+  },
+  {
+    "id": "evt-31",
+    "projectId": "proj-104",
+    "timestamp": "2025-09-23T09:15:00Z",
+    "projectevent_type": "PROJECT_PLANNED",
+    "actor": "ADMIN",
+    "messageAdmin": "Project planning completed for RetailMax.",
+    "messageUser": "Your implementation project plan has been created."
+  },
+  {
+    "id": "evt-32",
+    "projectId": "proj-104",
+    "timestamp": "2025-09-23T10:00:00Z",
+    "projectevent_type": "KICKOFF_MEETING",
+    "actor": "ADMIN",
+    "messageAdmin": "Kickoff meeting held with RetailMax stakeholders.",
+    "messageUser": "Your kickoff meeting was held with Zuora consultants."
+  },
+  {
+    "id": "evt-33",
+    "projectId": "proj-104",
+    "timestamp": "2025-09-23T11:00:00Z",
+    "projectevent_type": "GO_LIVE",
+    "actor": "SYSTEM",
+    "messageAdmin": "RetailMax Deployment went live successfully.",
+    "messageUser": "Your project has gone live successfully."
+  },
+  {
+    "id": "evt-34",
+    "projectId": "proj-104",
+    "timestamp": "2025-09-23T12:00:00Z",
+    "projectevent_type": "SYSTEM_UPDATE",
+    "actor": "SYSTEM",
+    "messageAdmin": "System finalized reporting for RetailMax project.",
+    "messageUser": "Your project reporting has been finalized."
+  }
+]

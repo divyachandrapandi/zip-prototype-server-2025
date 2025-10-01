@@ -164,3 +164,91 @@ export const updateProject = (req, res) => {
     res.status(500).json({ message: "Error updating project" });
   }
 };
+
+
+// POST /api/v1/projects/update-event - Update project phase and create event + notification
+export const updateProjectPhase = (req, res) => {
+    try {
+        const { projectId, newPhaseType, newPhase, message } = req.body;
+
+        // Validate required fields
+        if (!projectId || !newPhaseType || !newPhase || !message) {
+            return res.status(400).json({
+                message: "Missing required fields: projectId, newPhaseType, newPhase, message"
+            });
+        }
+
+        // Get current data
+        const projects = dataHelper.getData(PROJECTS_FILE);
+        const events = dataHelper.getData(PROJECT_EVENTS_FILE);
+        const notifications = dataHelper.getData(NOTIFICATIONS_FILE);
+
+        // Find the project
+        const projectIndex = projects.findIndex(p => p.id === projectId);
+
+        if (projectIndex === -1) {
+            return res.status(404).json({ message: "Project not found" });
+        }
+
+        const project = projects[projectIndex];
+
+        // Update project phase and phase_type
+        project.phase = newPhase;
+        project.phase_type = newPhaseType;
+        project.updatedAt = new Date().toISOString();
+
+        // Generate admin message automatically
+        const messageAdmin = `${project.name} - Phase updated to ${newPhase} (${newPhaseType})`;
+
+        // Create new project event
+        const newEvent = {
+            id: generateId("evt"),
+            projectId: projectId,
+            timestamp: new Date().toISOString(),
+            projectevent_type: newPhaseType,
+            actor: "SYSTEM",
+            messageAdmin: messageAdmin,
+            messageUser: message
+        };
+
+        // Add event to project timeline if it exists
+        if (project.timeline && Array.isArray(project.timeline)) {
+            project.timeline.push(newEvent.id);
+        }
+
+        // Create new notification for USER role
+        const newNotification = {
+            id: generateId("noti"),
+            toRole: "USER",
+            projectId: projectId,
+            notification_type: newPhaseType,
+            message: message,
+            createdAt: new Date().toISOString(),
+            read: false,
+            meta: {
+                projectId: projectId,
+                phase: newPhaseType
+            }
+        };
+
+        // Save updated data
+        projects[projectIndex] = project;
+        events.push(newEvent);
+        notifications.push(newNotification);
+
+        dataHelper.setData(PROJECTS_FILE, projects);
+        dataHelper.setData(PROJECT_EVENTS_FILE, events);
+        dataHelper.setData(NOTIFICATIONS_FILE, notifications);
+
+        res.json({
+            message: "Project phase updated successfully",
+            project: project,
+            event: newEvent,
+            notification: newNotification
+        });
+
+    } catch (error) {
+        console.error('Error updating project phase:', error);
+        res.status(500).json({ message: "Error updating project phase" });
+    }
+};
