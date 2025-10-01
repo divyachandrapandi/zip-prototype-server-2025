@@ -8,7 +8,7 @@ const router = express.Router();
 // GET /api/v1/requirements - get all requirements for that customer including doc
 router.get(
     '/',
-    celebrate(requirementsValidation.getRequirements),
+    // celebrate(requirementsValidation.getRequirements),
     requirementsController.getRequirements
 );
 

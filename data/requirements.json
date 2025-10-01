@@ -19,8 +19,8 @@
       },
       {
         "id": "req-301",
-        "projectId": "proj-103",
-        "client": "Acme Corp",
+        "projectId": "proj-101",
+        "client": "Indeed",
         "title": "User Role Permissions",
         "description": "System must enforce role-based access for Finance and Admin users.",
         "status": "Submitted",
@@ -33,8 +33,8 @@
       },
       {
         "id": "req-302",
-        "projectId": "proj-103",
-        "client": "Acme Corp",
+        "projectId": "proj-101",
+        "client": "Indeed",
         "title": "Audit Trail",
         "description": "System should log all changes to subscription records.",
         "status": "Processed",
