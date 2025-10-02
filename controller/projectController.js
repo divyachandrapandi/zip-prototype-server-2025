@@ -170,7 +170,7 @@ export const updateProject = (req, res) => {
 export const updateProjectPhase = (req, res) => {
     try {
         const { projectId, newPhaseType, newPhase, message } = req.body;
-
+        console.log("I am triggered guys");
         // Validate required fields
         if (!projectId || !newPhaseType || !newPhase || !message) {
             return res.status(400).json({

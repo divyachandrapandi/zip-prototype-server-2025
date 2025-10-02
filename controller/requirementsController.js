@@ -7,6 +7,7 @@ import multer from 'multer';
 const REQUIREMENTS_FILE = "requirements";
 const NOTIFICATIONS_FILE = "notifications";
 const PROJECT_EVENTS_FILE = "project-events";
+const PROJECT_FILE = "projects";
 
 // Generate unique IDs
 const generateId = (prefix) => {
@@ -111,7 +112,7 @@ export const getRequirementById = (req, res) => {
     }
 };
 
-export const generateRequirements =async (req,res) => {
+export const generateRequirements = async (req, res) => {
     try {
         const { projectId, client } = req.body;
 
@@ -122,7 +123,59 @@ export const generateRequirements =async (req,res) => {
             });
         }
 
-        // 1. Create notification for ADMIN
+        // 1. Load existing data
+        const notifications = dataHelper.getData(NOTIFICATIONS_FILE);
+        const projectEvents = dataHelper.getData(PROJECT_EVENTS_FILE);
+        const projects = dataHelper.getData(PROJECT_FILE);
+        const requirements = dataHelper.getData(REQUIREMENTS_FILE);
+
+        // 2. Find and update the project
+        const projectIndex = projects.findIndex(p => p.id === projectId);
+
+        if (projectIndex === -1) {
+            return res.status(404).json({ message: "Project not found" });
+        }
+
+        // Update project phase and metadata
+        projects[projectIndex].phase = "Requirements Processing";
+        projects[projectIndex].phase_type = "REQ_SUBMITTED";
+        projects[projectIndex].updatedAt = new Date().toISOString();
+
+        // 3. Create new requirement entry
+        const newRequirementId = generateId("req");
+        const currentTimestamp = new Date().toISOString();
+
+        const newRequirement = {
+            id: newRequirementId,
+            projectId: projectId,
+            client: client,
+            title: "Initial Requirements Gathering",
+            description: "Comprehensive requirements document covering business processes, system configurations, integration points, and acceptance criteria for the implementation project.",
+            status: "In Review",
+            priority: "Medium",
+            submittedBy: "USER",
+            fileName: `${client}_Requirements_Final.xlsx`,
+            filePath: `/files/requirements/${client}_Requirements_Final.xlsx`,
+            createdAt: currentTimestamp,
+            updatedAt: currentTimestamp
+        };
+
+        // Find or create project entry in requirements
+        let projectRequirementsIndex = requirements.findIndex(r => r.projectId === projectId);
+
+        if (projectRequirementsIndex === -1) {
+            // Create new project entry
+            requirements.push({
+                projectId: projectId,
+                client: client,
+                requirements: [newRequirement]
+            });
+        } else {
+            // Add to existing project requirements
+            requirements[projectRequirementsIndex].requirements.push(newRequirement);
+        }
+
+        // 4. Create notification for ADMIN
         const notification = {
             id: generateId("notif"),
             toRole: "ADMIN",
@@ -132,37 +185,44 @@ export const generateRequirements =async (req,res) => {
             createdAt: new Date().toISOString(),
             read: false,
             meta: {
-                requirementId: generateId("req"),
+                requirementId: newRequirementId,
                 client: client
             }
         };
 
-        // 2. Create project event
+        // 5. Create project event
         const projectEvent = {
             id: generateId("evt"),
             projectId: projectId,
             timestamp: new Date().toISOString(),
             projectevent_type: "REQ_SUBMITTED",
-            actor: "ADMIN",
+            actor: "USER",
             messageAdmin: `Requirement submitted by ${client} Team.`,
             messageUser: "Your requirement has been submitted successfully."
         };
 
-        // 3. Load existing data
-        const notifications = dataHelper.getData(NOTIFICATIONS_FILE);
-        const projectEvents = dataHelper.getData(PROJECT_EVENTS_FILE);
-
-        // 4. Add new records
+        // 6. Add new records
         notifications.push(notification);
         projectEvents.push(projectEvent);
 
-        // 5. Save updated data
+        // 7. Add event to project timeline if it exists
+        if (projects[projectIndex].timeline && Array.isArray(projects[projectIndex].timeline)) {
+            projects[projectIndex].timeline.push(projectEvent.id);
+        }
+
+        // 8. Save updated data
         dataHelper.setData(NOTIFICATIONS_FILE, notifications);
         dataHelper.setData(PROJECT_EVENTS_FILE, projectEvents);
+        dataHelper.setData(PROJECT_FILE, projects);
+        dataHelper.setData(REQUIREMENTS_FILE, requirements);
 
-        // 6. Send success response
+        // 9. Send success response
         res.status(201).json({
-            message: "Requirement generated successfully"
+            message: "Requirement generated successfully",
+            requirement: newRequirement,
+            project: projects[projectIndex],
+            event: projectEvent,
+            notification: notification
         });
 
     } catch (error) {
@@ -172,7 +232,7 @@ export const generateRequirements =async (req,res) => {
             error: error.message
         });
     }
-}
+};
 
 // GET - Download requirement file
 export const downloadRequirementFile = async (req, res) => {

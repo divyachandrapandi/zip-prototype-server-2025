@@ -81,5 +81,31 @@
       "requirementId": "req-201",
       "client": "Verdigm"
     }
+  },
+  {
+    "id": "noti-1759380413341-uc3kwfdgp",
+    "toRole": "USER",
+    "projectId": "proj-101",
+    "notification_type": "REQ_REQUESTED",
+    "message": "Requirements collection requested from client",
+    "createdAt": "2025-10-02T04:46:53.341Z",
+    "read": true,
+    "meta": {
+      "projectId": "proj-101",
+      "phase": "REQ_REQUESTED"
+    }
+  },
+  {
+    "id": "notif-1759382874737-f8d5rehhe",
+    "toRole": "ADMIN",
+    "projectId": "proj-101",
+    "notification_type": "REQ_SUBMITTED",
+    "message": "Requirement Files has been submitted by Indeed",
+    "createdAt": "2025-10-02T05:27:54.737Z",
+    "read": false,
+    "meta": {
+      "requirementId": "req-1759382874737-eoxiugub6",
+      "client": "Indeed"
+    }
   }
 ]

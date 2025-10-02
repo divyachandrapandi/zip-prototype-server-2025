@@ -9,13 +9,13 @@
         "client": "Indeed",
         "title": "Invoice Consolidation",
         "description": "System should consolidate multiple subscriptions into a single invoice.",
-        "status": "Submitted",
+        "status": "In Review",
         "priority": "Medium",
         "submittedBy": "USER",
-        "fileName": "Indeed_Invoice_Consolidation.xlsx.xlsx",
+        "fileName": "Indeed_Invoice_Consolidation.xlsx",
         "filePath": "/files/requirements/Indeed_Invoice_Consolidation.xlsx",
         "createdAt": "2025-09-21T11:00:00Z",
-        "updatedAt": "2025-10-01T14:43:24.310Z"
+        "updatedAt": "2025-10-02T04:26:16.832Z"
       },
       {
         "id": "req-301",
@@ -44,6 +44,20 @@
         "filePath": "/files/requirements/Indeed_Audit_trail.xlsx",
         "createdAt": "2025-09-22T09:45:00Z",
         "updatedAt": "2025-09-22T10:00:00Z"
+      },
+      {
+        "id": "req-1759382874737-eoxiugub6",
+        "projectId": "proj-101",
+        "client": "Indeed",
+        "title": "Initial Requirements Gathering",
+        "description": "Comprehensive requirements document covering business processes, system configurations, integration points, and acceptance criteria for the implementation project.",
+        "status": "In Review",
+        "priority": "Medium",
+        "submittedBy": "USER",
+        "fileName": "Indeed_Requirements_Final.xlsx",
+        "filePath": "/files/requirements/Indeed_Requirements_Final.xlsx",
+        "createdAt": "2025-10-02T05:27:54.737Z",
+        "updatedAt": "2025-10-02T05:27:54.737Z"
       }
     ]
   }

@@ -187,5 +187,23 @@
     "actor": "SYSTEM",
     "messageAdmin": "System finalized reporting for RetailMax project.",
     "messageUser": "Your project reporting has been finalized."
+  },
+  {
+    "id": "evt-1759380413341-wtb2ur6y0",
+    "projectId": "proj-101",
+    "timestamp": "2025-10-02T04:46:53.341Z",
+    "projectevent_type": "REQ_REQUESTED",
+    "actor": "SYSTEM",
+    "messageAdmin": "Indeed Billing Implementation - Phase updated to Requirements Collection (REQ_REQUESTED)",
+    "messageUser": "Requirements collection requested from client"
+  },
+  {
+    "id": "evt-1759382874737-w1gz8riv2",
+    "projectId": "proj-101",
+    "timestamp": "2025-10-02T05:27:54.737Z",
+    "projectevent_type": "REQ_SUBMITTED",
+    "actor": "USER",
+    "messageAdmin": "Requirement submitted by Indeed Team.",
+    "messageUser": "Your requirement has been submitted successfully."
   }
 ]
