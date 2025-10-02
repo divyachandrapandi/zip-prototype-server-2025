@@ -5,6 +5,7 @@ import notificationRouter from './notificationRouter.js';
 import requirementsRouter from './requirementsRouter.js';
 import projectRouter from './projectRouter.js';
 import projectTimelineRouter from './projectTimelineRouter.js';
+import resetRouter from './resetRouter.js';
 
 export const router = express.Router();
 
@@ -28,6 +29,10 @@ const defaultTypes = [
     {
         path: '/project-timelines',
         route: projectTimelineRouter
+    },
+    {
+        path: '/reset',
+        route: resetRouter
     }
 ];
 

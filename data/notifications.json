@@ -83,12 +83,12 @@
     }
   },
   {
-    "id": "noti-1759380413341-uc3kwfdgp",
+    "id": "noti-1759410361199-921avatbc",
     "toRole": "USER",
     "projectId": "proj-101",
     "notification_type": "REQ_REQUESTED",
     "message": "Requirements collection requested from client",
-    "createdAt": "2025-10-02T04:46:53.341Z",
+    "createdAt": "2025-10-02T13:06:01.199Z",
     "read": true,
     "meta": {
       "projectId": "proj-101",
@@ -96,15 +96,15 @@
     }
   },
   {
-    "id": "notif-1759382874737-f8d5rehhe",
+    "id": "notif-1759410382805-f9azv753t",
     "toRole": "ADMIN",
     "projectId": "proj-101",
     "notification_type": "REQ_SUBMITTED",
     "message": "Requirement Files has been submitted by Indeed",
-    "createdAt": "2025-10-02T05:27:54.737Z",
+    "createdAt": "2025-10-02T13:06:22.805Z",
     "read": false,
     "meta": {
-      "requirementId": "req-1759382874737-eoxiugub6",
+      "requirementId": "req-1759410382805-ao5pdq6jx",
       "client": "Indeed"
     }
   }

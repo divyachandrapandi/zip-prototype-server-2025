@@ -1,0 +1,22 @@
+[
+  {
+    "id": "rtm-1",
+    "projectId": "proj-101",
+    "client": "ClientName",
+    "name": "ClientName_RTM_proj-101.xlsx",
+    "status": "Generated",
+    "generatedBy": "ADMIN",
+    "generatedDate": "2025-10-02T12:58:26.748Z",
+    "filePath": "/files/rtm/ClientName_RTM_proj-101.xlsx"
+  },
+  {
+    "id": "rtm-2",
+    "projectId": "proj-101",
+    "client": "Indeed",
+    "name": "Indeed_RTM_proj-101.xlsx",
+    "status": "Generated",
+    "generatedBy": "ADMIN",
+    "generatedDate": "2025-10-02T13:08:25.940Z",
+    "filePath": "/files/rtm/Indeed_RTM_proj-101.xlsx"
+  }
+]
