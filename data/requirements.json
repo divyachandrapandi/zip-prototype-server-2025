@@ -44,20 +44,6 @@
         "filePath": "/files/requirements/Indeed_Audit_trail.xlsx",
         "createdAt": "2025-09-22T09:45:00Z",
         "updatedAt": "2025-09-22T10:00:00Z"
-      },
-      {
-        "id": "req-1759410382805-ao5pdq6jx",
-        "projectId": "proj-101",
-        "client": "Indeed",
-        "title": "Initial Requirements Gathering",
-        "description": "Comprehensive requirements document covering business processes, system configurations, integration points, and acceptance criteria for the implementation project.",
-        "status": "In Review",
-        "priority": "Medium",
-        "submittedBy": "USER",
-        "fileName": "Indeed_Requirements_Final.xlsx",
-        "filePath": "/files/requirements/Indeed_Requirements_Final.xlsx",
-        "createdAt": "2025-10-02T13:06:22.805Z",
-        "updatedAt": "2025-10-02T13:06:22.805Z"
       }
     ]
   }

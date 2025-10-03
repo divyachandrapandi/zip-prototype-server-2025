@@ -3,14 +3,14 @@
     "id": "proj-101",
     "name": "Indeed Billing Implementation",
     "client": "Indeed",
-    "phase": "Requirements Processing",
-    "phase_type": "REQ_SUBMITTED",
+    "phase": "Requirements Collection",
+    "phase_type": "REQ_REQUESTED",
     "status": "Planning",
     "assignee": "Sarah Johnson",
     "dueDate": "2026-01-15T00:00:00Z",
     "progress": 25,
     "createdAt": "2025-09-20T09:00:00Z",
-    "updatedAt": "2025-10-02T13:06:22.805Z",
+    "updatedAt": "2025-10-03T04:31:26.555Z",
     "timeline": [
       "evt-1",
       "evt-1a",
@@ -18,8 +18,7 @@
       "evt-1c",
       "evt-1d",
       "evt-1e",
-      "evt-1759410361199-zw26n3v9b",
-      "evt-1759410382805-ul6t8ld4n"
+      "evt-1759465886555-gjincmt9q"
     ]
   },
   {

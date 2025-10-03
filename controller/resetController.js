@@ -4,11 +4,13 @@ import path from 'path';
 /**
  * POST /api/v1/reset-data
  * Resets all data files by copying from data-copy to data folder
+ * Also cleans up RTM files from files/rtm directory
  */
 export const resetData = async (req, res) => {
     try {
         const dataCopyDir = path.join(process.cwd(), 'data-copy');
         const dataDir = path.join(process.cwd(), 'data');
+        const rtmDir = path.join(process.cwd(), 'files', 'rtm');
 
         // Check if data-copy directory exists
         if (!fs.existsSync(dataCopyDir)) {
@@ -60,23 +62,58 @@ export const resetData = async (req, res) => {
             }
         }
 
+        // **NEW: Clean up specific RTM file**
+        const specificRtmFile = 'Indeed_RTM_proj-101.xlsx';
+        let rtmFileDeleted = false;
+        let rtmError = null;
+
+        // Check if RTM directory exists
+        if (fs.existsSync(rtmDir)) {
+            const specificRtmPath = path.join(rtmDir, specificRtmFile);
+
+            // Check if the specific file exists
+            if (fs.existsSync(specificRtmPath)) {
+                try {
+                    fs.unlinkSync(specificRtmPath);
+                    rtmFileDeleted = true;
+                    console.log(`Deleted RTM file: ${specificRtmFile}`);
+                } catch (err) {
+                    console.error(`Error deleting RTM file ${specificRtmFile}:`, err);
+                    rtmError = {
+                        file: specificRtmFile,
+                        error: err.message
+                    };
+                }
+            } else {
+                console.log(`RTM file ${specificRtmFile} does not exist, skipping deletion`);
+            }
+        } else {
+            console.log('RTM directory does not exist, skipping RTM cleanup');
+        }
+
         // Prepare response
         const response = {
-            success: errors.length === 0,
-            message: errors.length === 0
+            success: errors.length === 0 && !rtmError,
+            message: errors.length === 0 && !rtmError
                 ? 'Data reset completed successfully'
                 : 'Data reset completed with some errors',
             copiedFiles,
             totalFiles: files.length,
             successCount: copiedFiles.length,
-            errorCount: errors.length
+            errorCount: errors.length,
+            rtmFileDeleted,
+            rtmFileName: specificRtmFile
         };
 
         if (errors.length > 0) {
             response.errors = errors;
         }
 
-        const statusCode = errors.length === 0 ? 200 : 207; // 207 = Multi-Status
+        if (rtmError) {
+            response.rtmError = rtmError;
+        }
+
+        const statusCode = (errors.length === 0 && !rtmError) ? 200 : 207; // 207 = Multi-Status
         res.status(statusCode).json(response);
 
     } catch (error) {
@@ -92,17 +129,21 @@ export const resetData = async (req, res) => {
 /**
  * GET /api/v1/reset-data/status
  * Check the status of data files and what would be reset
+ * Also shows RTM files that would be deleted
  */
 export const getResetStatus = async (req, res) => {
     try {
         console.log("you triggered mi ");
         const dataCopyDir = path.join(process.cwd(), 'data-copy');
         const dataDir = path.join(process.cwd(), 'data');
+        const rtmDir = path.join(process.cwd(), 'files', 'rtm');
 
         const status = {
             dataCopyExists: fs.existsSync(dataCopyDir),
             dataExists: fs.existsSync(dataDir),
-            files: []
+            rtmDirExists: fs.existsSync(rtmDir),
+            files: [],
+            specificRtmFile: null
         };
 
         if (!status.dataCopyExists) {
@@ -142,6 +183,37 @@ export const getResetStatus = async (req, res) => {
             }
 
             status.files.push(fileInfo);
+        }
+
+        // **NEW: Check specific RTM file**
+        const specificRtmFile = 'Indeed_RTM_proj-101.xlsx';
+        if (status.rtmDirExists) {
+            const specificRtmPath = path.join(rtmDir, specificRtmFile);
+
+            if (fs.existsSync(specificRtmPath)) {
+                try {
+                    const rtmStats = fs.statSync(specificRtmPath);
+                    status.specificRtmFile = {
+                        name: specificRtmFile,
+                        exists: true,
+                        size: rtmStats.size,
+                        created: rtmStats.birthtime,
+                        modified: rtmStats.mtime
+                    };
+                } catch (err) {
+                    console.error('Error reading RTM file:', err);
+                    status.specificRtmFile = {
+                        name: specificRtmFile,
+                        exists: true,
+                        error: err.message
+                    };
+                }
+            } else {
+                status.specificRtmFile = {
+                    name: specificRtmFile,
+                    exists: false
+                };
+            }
         }
 
         res.json({
